@@ -27,9 +27,9 @@ const Login = () => {
   // const onSubmit =
 
   return (
-    <div className="login night">
+    <div className="login morning">
       <div className="login__greeting">
-        Good <span className="time">Night</span>
+        Good <span className="time">Morning</span>
       </div>
 
       <form>
