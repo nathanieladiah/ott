@@ -5,6 +5,10 @@ import { MdLockOutline, MdOutlinePerson } from "react-icons/md";
 import "./login.scss";
 
 const Login = () => {
+  // For the time of day
+  const date = new Date();
+  const currentHour = date.getHours();
+
   // const [showPassword, setShowPassword] = useState(false);
   const showPassword = false;
 
@@ -25,11 +29,20 @@ const Login = () => {
   };
 
   // const onSubmit =
+  let time = "";
+
+  if ((currentHour >= 12) & (currentHour < 18)) {
+    time = "afternoon";
+  } else if (currentHour >= 18) {
+    time = "night";
+  } else {
+    time = "morning";
+  }
 
   return (
-    <div className="login morning">
+    <div className={`login ${time}`}>
       <div className="login__greeting">
-        Good <span className="time">Morning</span>
+        Good <span className="time">{time}</span>
       </div>
 
       <form>
