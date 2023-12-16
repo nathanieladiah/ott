@@ -39,7 +39,7 @@ body {
   font-size: var(--fs-400);
   font-weight: 700;
   // background-color: var(--clr-gray);
-  background: linear-gradient(#fbf2f2, #fbd0d8);
+  // background: linear-gradient(#fbf2f2, #fbd0d8);
   color: var(--clr-dark);
   line-height: 1.5;
   min-height: 100vh;
@@ -73,8 +73,8 @@ body {
   min-height: 100vh;
 
   // padding-block: abs.rem(66);
-  padding-block: abs.rem(32);
-  padding-inline: abs.rem(20);
+  // padding-block: abs.rem(32);
+  // padding-inline: abs.rem(20);
 }
 
 .love-message {
