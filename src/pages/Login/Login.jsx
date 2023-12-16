@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { MdLockOutline, MdOutlinePerson } from "react-icons/md";
-// import { useNavigate } from "react-router-dom";
 
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+import { auth } from "../../firebase.config";
 import "./login.scss";
 
 const Login = () => {
@@ -19,7 +21,7 @@ const Login = () => {
 
   const { username, password } = formData;
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const onChange = (e) => {
     setFormData((prevState) => ({
@@ -28,7 +30,24 @@ const Login = () => {
     }));
   };
 
-  // const onSubmit =
+  const onSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const userCredentials = await signInWithEmailAndPassword(
+        auth,
+        username,
+        password
+      );
+
+      if (userCredentials.user) {
+        navigate("/home");
+      }
+    } catch (error) {
+      console.log("Invalid User Credentials");
+    }
+  };
+
   let time = "";
 
   if ((currentHour >= 12) & (currentHour < 18)) {
@@ -45,7 +64,7 @@ const Login = () => {
         Good <span className="time">{time}</span>
       </div>
 
-      <form>
+      <form onSubmit={onSubmit}>
         <div className="input-wrapper">
           <input
             type="text"
