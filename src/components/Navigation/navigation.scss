@@ -1,0 +1,26 @@
+@use "../../sass/abstracts/" as abs;
+
+.navigationButtons {
+  // margin-top: abs.rem(54);
+  position: fixed;
+  bottom: abs.rem(12);
+  padding: abs.rem(20);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  button {
+    background: transparent;
+    border: 0;
+
+    a {
+      color: var(--clr-dark);
+    }
+  }
+
+  svg {
+    width: 30px;
+    height: 30px;
+  }
+}
