@@ -3,6 +3,7 @@ import PageLayout from "./components/PageLayout/PageLayout";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
+import OttPage from "./pages/OttPage/OttPage";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
         <Route element={<PrivateRoute />}>
           <Route element={<PageLayout />}>
             <Route path="/home" element={<Home />} />
+            <Route path="/ott" element={<OttPage />} />
           </Route>
         </Route>
       </Routes>
