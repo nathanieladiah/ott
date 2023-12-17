@@ -1,0 +1,69 @@
+@use "../../sass/abstracts/" as abs;
+
+.appContainer {
+  width: 100%;
+  margin-top: abs.rem(36);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "ott     ott     messages  timeline"
+    "ott     ott     journal   scrapbook"
+    "planner choices attention logout   ";
+  place-items: center center;
+  row-gap: abs.rem(20);
+  //   column-gap: abs.rem(20);
+
+  .ott-icon {
+    background-color: var(--clr-dull-pink);
+    background-image: url(../../assets/images/appIcons/ott.png);
+    background-size: cover;
+    background-position: center center;
+    width: 147px;
+    aspect-ratio: 1 / 1;
+    border-radius: 19px;
+    place-self: stretch center;
+    grid-area: ott;
+  }
+  .messages-icon {
+    grid-area: messages;
+  }
+
+  .timeline-icon {
+    grid-area: timeline;
+
+    .img-container {
+      background-color: #fa95a8;
+    }
+  }
+
+  .journal-icon {
+    grid-area: journal;
+  }
+
+  .scrapbook-icon {
+    grid-area: scrapbook;
+  }
+
+  .planner-icon {
+    grid-area: planner;
+  }
+
+  .choices-icon {
+    grid-area: choices;
+
+    .img-container {
+      background-color: #fa95a8;
+    }
+  }
+
+  .attention-icon {
+    grid-area: attention;
+  }
+
+  button {
+    grid-area: logout;
+    border: none;
+    background-color: transparent;
+  }
+}

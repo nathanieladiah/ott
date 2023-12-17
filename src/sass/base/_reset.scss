@@ -77,6 +77,11 @@ body {
   // padding-inline: abs.rem(20);
 }
 
+.content-container {
+  padding-block: abs.rem(32);
+  padding-inline: abs.rem(20);
+}
+
 .love-message {
   font-family: var(--ff-serif);
   font-size: abs.rem(50);

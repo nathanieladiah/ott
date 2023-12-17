@@ -3,6 +3,9 @@ import { MdLockOutline, MdOutlinePerson } from "react-icons/md";
 
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import { auth } from "../../firebase.config";
 import "./login.scss";
 
@@ -44,7 +47,7 @@ const Login = () => {
         navigate("/home");
       }
     } catch (error) {
-      console.log("Invalid User Credentials");
+      toast.error("Invalid User Credentials");
     }
   };
 
@@ -63,6 +66,8 @@ const Login = () => {
       <div className="login__greeting">
         Good <span className="time">{time}</span>
       </div>
+
+      <ToastContainer />
 
       <form onSubmit={onSubmit}>
         <div className="input-wrapper">

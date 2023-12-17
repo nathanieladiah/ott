@@ -1,22 +1,13 @@
-import { useNavigate } from "react-router-dom";
-import { auth } from "../../firebase.config";
+import AppContainer from "../../components/AppContainer/AppContainer";
+import Time from "../../components/Time/Time";
 
 const Home = () => {
-  const navigate = useNavigate();
-
-  const onLogout = () => {
-    auth.signOut();
-    navigate("/sign-in");
-  };
-
   return (
-    <>
-      <h1>Home Page</h1>
-      <p>Congrats on logging in!</p>
-      <button onClick={onLogout} type="button" className="logOut">
-        Logout
-      </button>
-    </>
+    <div className="content-container">
+      <Time />
+      <AppContainer />
+      <h2 className="love-message">I love you Ashaki</h2>
+    </div>
   );
 };
 export default Home;
