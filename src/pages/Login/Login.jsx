@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MdLockOutline, MdOutlinePerson } from "react-icons/md";
 
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+import Spinner from "../../components/Spinner/Spinner";
 import { auth } from "../../firebase.config";
+import useAuthStatus from "../../hooks/useAuthStatus";
 import "./login.scss";
 
 const Login = () => {
@@ -51,6 +53,8 @@ const Login = () => {
     }
   };
 
+  useEffect(() => {});
+
   let time = "";
 
   if ((currentHour >= 12) & (currentHour < 18)) {
@@ -61,6 +65,16 @@ const Login = () => {
     time = "morning";
   }
 
+  const { loggedIn, checkingStatus } = useAuthStatus();
+
+  if (checkingStatus) {
+    return <Spinner />;
+  }
+
+  if (loggedIn) {
+    return <Navigate to="/home" />;
+  }
+
   return (
     <div className={`login ${time}`}>
       <div className="login__greeting">
@@ -68,6 +82,8 @@ const Login = () => {
       </div>
 
       <ToastContainer />
+
+      {/* Add something sweet here, like quotes */}
 
       <form onSubmit={onSubmit}>
         <div className="input-wrapper">
