@@ -10,9 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "@fontsource/inter": "^5.0.16",
     "@fontsource/italianno": "^5.0.18",
     "@fontsource/roboto": "^5.0.8",
+    "@mui/material": "^5.15.0",
     "date-fns": "^2.30.0",
     "firebase": "^10.7.1",
     "prop-types": "^15.8.1",

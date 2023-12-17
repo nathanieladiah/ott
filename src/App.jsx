@@ -1,6 +1,7 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import PageLayout from "./components/PageLayout/PageLayout";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import Gallery from "./pages/Gallery/Gallery";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import OttPage from "./pages/OttPage/OttPage";
@@ -17,6 +18,7 @@ const App = () => {
             <Route path="/home" element={<Home />} />
             <Route path="/ott" element={<OttPage />} />
             <Route path="/timeline" element={<Timeline />} />
+            <Route path="scrapbook" element={<Gallery />} />
           </Route>
         </Route>
       </Routes>
