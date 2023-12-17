@@ -1,0 +1,9 @@
+@use "../../sass/abstracts/" as abs;
+
+.timeline {
+  &__heading {
+    font-family: var(--ff-serif);
+    text-align: center;
+    font-size: abs.rem(43);
+  }
+}
