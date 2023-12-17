@@ -1,0 +1,38 @@
+@use "../../sass/abstracts/" as abs;
+
+.journalPage {
+  .container {
+    padding-inline: abs.rem(20);
+  }
+
+  &__header {
+    height: abs.rem(96);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h1 {
+      font-size: abs.rem(18);
+      font-weight: 700;
+    }
+
+    svg {
+      height: 24px;
+      width: 24px;
+    }
+  }
+
+  &__content {
+    background-color: #ffc5d4;
+    width: 100vw;
+    height: calc(100vh - 78px - 96px - 64px);
+    overflow-y: scroll;
+    padding-top: 1rem;
+
+    p {
+      font-size: 1rem;
+      padding-inline: abs.rem(20);
+      margin-bottom: 1rem;
+    }
+  }
+}

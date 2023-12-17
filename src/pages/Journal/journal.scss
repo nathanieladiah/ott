@@ -1,0 +1,96 @@
+@use "../../sass/abstracts/" as abs;
+
+.journal {
+  .container {
+    padding-inline: abs.rem(20);
+  }
+
+  &__header {
+    // background-color: var(--clr-dull-pink);
+    height: abs.rem(116);
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+  }
+
+  &__search {
+    background-color: var(--clr-light);
+    border-radius: 20px;
+    height: abs.rem(50);
+    position: relative;
+    top: 25%;
+    padding-inline: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    svg {
+      height: 18px;
+      width: 18px;
+    }
+
+    span {
+      font-weight: 400;
+      font-size: abs.rem(14);
+    }
+  }
+
+  &__entries {
+    background-color: var(--clr-dull-pink);
+    background-color: #ffc5d4;
+    // height: abs.rem(600);
+    // width: 100%;
+    width: 100vw;
+    height: calc(100vh - 78px - 116px - 64px);
+    overflow-y: scroll;
+  }
+
+  &__date-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 1rem;
+    margin-bottom: abs.rem(12);
+
+    h2 {
+      font-size: abs.rem(12);
+    }
+
+    hr {
+      border: 0;
+      height: 1px;
+      background: var(--clr-dark);
+      flex-grow: 2;
+    }
+  }
+
+  &__entries-container {
+    display: flex;
+    flex-direction: column;
+    gap: abs.rem(24);
+
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &__entry {
+    background-color: var(--clr-light);
+    padding: 0.5rem 1rem;
+    border-radius: 9px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: inherit;
+    .time {
+      font-weight: bold;
+      font-size: abs.rem(10);
+    }
+
+    .text {
+      font-size: abs.rem(14);
+    }
+  }
+}
