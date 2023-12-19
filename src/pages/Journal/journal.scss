@@ -1,6 +1,16 @@
 @use "../../sass/abstracts/" as abs;
 
 .journal {
+  .fab {
+    float: right;
+    margin-right: 1.5rem;
+    background-color: pink;
+
+    &-icon {
+      height: 32px;
+      width: 32px;
+    }
+  }
   .container {
     padding-inline: abs.rem(20);
   }

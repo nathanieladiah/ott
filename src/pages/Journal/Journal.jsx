@@ -1,5 +1,6 @@
-import { MdOutlineAccountCircle, MdOutlineSearch } from "react-icons/md";
+import { MdAdd, MdOutlineAccountCircle, MdOutlineSearch } from "react-icons/md";
 
+import { Fab } from "@mui/material";
 import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import DateGroup from "../../components/DateGroup/DateGroup";
@@ -58,6 +59,10 @@ const Journal = () => {
           ))
         )}
       </div>
+      <Fab color="primary" aria-label="add" href="/journal/new" className="fab">
+        {/* <AddIcon /> */}
+        <MdAdd className="fab-icon" />
+      </Fab>
     </div>
   );
 };

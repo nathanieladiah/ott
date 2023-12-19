@@ -1,0 +1,14 @@
+@use "../../sass/abstracts/" as abs;
+
+.journalPage {
+  &__content {
+    textarea {
+      height: 100%;
+      width: 100%;
+      background-color: transparent;
+      border: none;
+      outline: none;
+      padding-inline: 1.5rem;
+    }
+  }
+}

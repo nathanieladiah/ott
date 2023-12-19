@@ -6,6 +6,7 @@ import Home from "./pages/Home/Home";
 import Journal from "./pages/Journal/Journal";
 import JournalEntry from "./pages/JournalEntry/JournalEntry";
 import Login from "./pages/Login/Login";
+import NewJournalEntry from "./pages/NewJournalEntry/NewJournalEntry";
 import OttPage from "./pages/OttPage/OttPage";
 import Timeline from "./pages/Timeline/Timeline";
 
@@ -23,6 +24,7 @@ const App = () => {
             <Route path="/scrapbook" element={<Gallery />} />
             <Route path="/journal" element={<Journal />} />
             <Route path="/journal/:entryId" element={<JournalEntry />} />
+            <Route path="/journal/new" element={<NewJournalEntry />} />
           </Route>
         </Route>
       </Routes>
