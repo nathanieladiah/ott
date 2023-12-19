@@ -10,12 +10,15 @@ import {
 } from "firebase/firestore";
 import { useState } from "react";
 import { MdOutlineClose, MdOutlineSave } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 import { auth, db } from "../../firebase.config";
 import "./newJournalEntry.scss";
 
 const NewJournalEntry = () => {
   const [text, setText] = useState("");
   const { uid } = auth.currentUser;
+
+  const navigate = useNavigate();
 
   const today = new Date();
   // Format the current date into the form: Monday, October 16 2023
@@ -33,7 +36,6 @@ const NewJournalEntry = () => {
     };
 
     const docRef = await addDoc(collection(db, "journal"), entryData);
-    console.log(docRef.id);
 
     // Get the list of all stored journalDates
     try {
@@ -59,7 +61,6 @@ const NewJournalEntry = () => {
 
       //   Compare each date in the database with the actual date..
       dates.forEach((date) => {
-        console.log(date.data.dateString);
         if (date.data.dateString === todayString) {
           currentDate.match = true;
           currentDate.id = date.id;
@@ -87,6 +88,9 @@ const NewJournalEntry = () => {
     } catch (error) {
       console.error("Something went wrong");
     }
+
+    // Redirect to the newly created entry
+    navigate(`/journal/${docRef.id}`);
   };
 
   return (
