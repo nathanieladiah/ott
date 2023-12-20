@@ -1,3 +1,4 @@
+import { Fab } from "@mui/material";
 import { format } from "date-fns";
 import {
   addDoc,
@@ -98,9 +99,9 @@ const NewJournalEntry = () => {
       <div className="journalPage__header container">
         <MdOutlineSave onClick={onSubmit} />
         {/* <h1>October 16, 2023</h1> */}
-        <h1>{todayString}</h1>
+        <h1>{format(today, "eee MMM d yyyy")}</h1>
         {/* {date.toDateString()} */}
-        <MdOutlineClose />
+        <MdOutlineClose onClick={() => navigate("/journal")} />
       </div>
       <div className="journalPage__content">
         <textarea
@@ -111,6 +112,9 @@ const NewJournalEntry = () => {
           onChange={(e) => setText(e.target.value)}
         ></textarea>
       </div>
+      <Fab className="fab" onClick={onSubmit}>
+        <MdOutlineSave className="fab-icon" />
+      </Fab>
     </div>
   );
 };

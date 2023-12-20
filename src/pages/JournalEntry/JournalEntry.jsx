@@ -1,6 +1,7 @@
+import { Fab } from "@mui/material";
 import { doc, getDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import { MdOutlineClose, MdOutlineSave } from "react-icons/md";
+import { MdEdit, MdOutlineClose, MdOutlineSave } from "react-icons/md";
 import { useNavigate, useParams } from "react-router-dom";
 import { db } from "../../firebase.config";
 import "./journalEntry.scss";
@@ -35,11 +36,14 @@ const JournalEntry = () => {
         <MdOutlineSave />
         {/* <h1>October 16, 2023</h1> */}
         <h1>{entry.timestamp.toDate().toDateString()}</h1>
-        <MdOutlineClose />
+        <MdOutlineClose onClick={() => navigate("/journal")} />
       </div>
       <div className="journalPage__content">
         <p>{entry.content}</p>
       </div>
+      <Fab className="fab" aria-label="edit">
+        <MdEdit className="fab-icon" />
+      </Fab>
     </div>
   );
 };
