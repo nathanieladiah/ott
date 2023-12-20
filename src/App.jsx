@@ -9,6 +9,7 @@ import Login from "./pages/Login/Login";
 import NewJournalEntry from "./pages/NewJournalEntry/NewJournalEntry";
 import OttPage from "./pages/OttPage/OttPage";
 import Timeline from "./pages/Timeline/Timeline";
+import UpdateJournalEntry from "./pages/UpdateJournalEntry/UpdateJournalEntry";
 
 const App = () => {
   return (
@@ -24,6 +25,10 @@ const App = () => {
             <Route path="/scrapbook" element={<Gallery />} />
             <Route path="/journal" element={<Journal />} />
             <Route path="/journal/:entryId" element={<JournalEntry />} />
+            <Route
+              path="/journal/update/:entryId"
+              element={<UpdateJournalEntry />}
+            />
             <Route path="/journal/new" element={<NewJournalEntry />} />
           </Route>
         </Route>

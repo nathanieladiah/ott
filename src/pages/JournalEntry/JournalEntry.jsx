@@ -36,13 +36,17 @@ const JournalEntry = () => {
         <MdOutlineSave />
         {/* <h1>October 16, 2023</h1> */}
         <h1>{entry.timestamp.toDate().toDateString()}</h1>
-        <MdOutlineClose onClick={() => navigate("/journal")} />
+        <MdOutlineClose onClick={() => navigate("/journal/")} />
       </div>
       <div className="journalPage__content">
         {/* <p>{entry.content.replace(/\n/g, "<br/>")}</p> */}
         <p>{entry.content}</p>
       </div>
-      <Fab className="fab" aria-label="edit">
+      <Fab
+        className="fab"
+        aria-label="edit"
+        onClick={() => navigate(`/journal/update/${params.entryId}`)}
+      >
         <MdEdit className="fab-icon" />
       </Fab>
     </div>
