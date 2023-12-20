@@ -8,6 +8,7 @@ import "./journalEntry.scss";
 
 const JournalEntry = () => {
   const [entry, setEntry] = useState(null);
+  const [lines, setLines] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const navigate = useNavigate();
@@ -20,6 +21,7 @@ const JournalEntry = () => {
 
       if (docSnap.exists()) {
         setEntry(docSnap.data());
+        setLines(docSnap.data().content.split("\n"));
         setLoading(false);
       }
     };
@@ -34,13 +36,11 @@ const JournalEntry = () => {
     <div className="journalPage">
       <div className="journalPage__header container">
         <MdOutlineSave />
-        {/* <h1>October 16, 2023</h1> */}
         <h1>{entry.timestamp.toDate().toDateString()}</h1>
         <MdOutlineClose onClick={() => navigate("/journal/")} />
       </div>
       <div className="journalPage__content">
-        {/* <p>{entry.content.replace(/\n/g, "<br/>")}</p> */}
-        <p>{entry.content}</p>
+        {lines && lines.map((line, index) => <p key={index}>{line}</p>)}
       </div>
       <Fab
         className="fab"
