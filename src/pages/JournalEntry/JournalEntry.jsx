@@ -39,6 +39,7 @@ const JournalEntry = () => {
         <MdOutlineClose onClick={() => navigate("/journal")} />
       </div>
       <div className="journalPage__content">
+        {/* <p>{entry.content.replace(/\n/g, "<br/>")}</p> */}
         <p>{entry.content}</p>
       </div>
       <Fab className="fab" aria-label="edit">
