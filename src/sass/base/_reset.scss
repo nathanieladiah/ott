@@ -75,6 +75,16 @@ body {
   // padding-block: abs.rem(66);
   // padding-block: abs.rem(32);
   // padding-inline: abs.rem(20);
+
+  // background-image: url(../../assets/images/backgrounds/christmas.png);
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.45),
+      rgba(255, 255, 255, 0.45)
+    ),
+    url(../assets/images/backgrounds/christmas.png);
+  background-size: contain;
+  background-position: center bottom;
+  // background-repeat: no-repeat;
 }
 
 .content-container {
