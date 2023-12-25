@@ -6,7 +6,7 @@ const Home = () => {
     <div className="content-container">
       <Time />
       <AppContainer />
-      <h2 className="love-message">I love you Ashaki</h2>
+      {/* <h2 className="love-message">I love you Ashaki</h2> */}
     </div>
   );
 };
